@@ -4,8 +4,7 @@ import './App.css';
 function App() {
     return ( <
         div className = "App" >
-        Hello Sana!
-        <
+        React to react native <
         /div>
     );
 }
