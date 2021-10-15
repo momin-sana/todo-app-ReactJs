@@ -4,7 +4,7 @@ import './App.css';
 function App() {
     return ( <
         div className = "App" >
-        Text changes in Vs CODE <
+        LEARN REACT AND REACT NATIVE <
         /div>
     );
 }
