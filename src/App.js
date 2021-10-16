@@ -7,6 +7,11 @@ function App() {
         div className = "container" >
         <
         h1 > Todo App < /h1> <
+        input / >
+        <
+        br / >
+        <
+        button className = "submit" > Submit < /button> <
         /div> <
         /div>
     );
