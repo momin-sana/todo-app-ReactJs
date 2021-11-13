@@ -1,14 +1,13 @@
     .todoListStyle {
         border-radius: 8px;
-        margin-right: 10px;
-        padding-inline: 10px;
+        margin-right: 12px;
+        padding-inline: 7px;
+        padding-inline-end: 22px;
         color: black;
         border-left-color: #2f3c4e;
         border-left-style: solid;
         border-left-width: 15px;
         box-shadow: 0px 0px 5px 1px #aaaaaa;
-        display: flex;
-        justify-content: space-between;
         margin-top: 10px;
         text-align: left;
         background-color: aliceblue;
@@ -29,4 +28,48 @@
         width: 32px;
         cursor: pointer;
         box-shadow: 2px 2px 4px 1px #2f3c4e;
+    }
+    
+    .inputBtn {
+        margin: 1%;
+        width: 100%;
+        display: inline-flex;
+        justify-content: center;
+        align-content: space-between;
+        justify-items: center;
+        align-items: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        /* background-color: darkslategrey; */
+    }
+    
+    .inputBtn::before {
+        content: '';
+        display: block;
+        clear: both;
+    }
+    
+    .inputBox {
+        width: 90%;
+        margin-inline: 7px;
+        margin-left: 0px;
+        margin-bottom: 1px;
+        padding: 7px;
+        border-width: 1px;
+        box-shadow: 0px 0px 5px 1px #2f3c4e;
+        border-radius: 8px;
+        border-color: #000000;
+    }
+    
+    button {
+        border-style: none;
+        background-color: #2f3c4e;
+        color: white;
+        padding: 3px;
+        border-radius: 10px;
+        align-self: center;
+        height: 28px;
+        width: 61px;
+        cursor: pointer;
+        box-shadow: 2px 2px 4px 1px #010307;
     }

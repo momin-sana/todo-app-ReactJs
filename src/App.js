@@ -1,30 +1,31 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import TodoList from "./component/TodoList/TodoList";
-import db from "./component/Firebase/firebase";
+import db from "./component/Firebase/firebase"; //
 import { addDoc, collection, getDocs } from "firebase/firestore/lite";
 
 function App() {
-    const [todos, setTodos] = useState([]); //todo is variable, setTodos is a function which store values in "todos". "useState is a reacthook" which help us to enable the functions
-    const [newTodo, setNewTodo] = useState("");
+    const [todos, setTodos] = useState([]); //todo is variable, setTodos is a function which store values in "todos". "useState is a reacthook" which help us to enable the functions. here [] means we are going to use array in it, 
+    const [newTodo, setNewTodo] = useState(""); // for "ADD" functionality. here "" means we are going to use string in it. 
 
     //to call collection from firestore
     const todoData = collection(db, "todos"); //"collection function has 2 parameters : 1st the path where collection is stored and 2nd the name of collection"
     useEffect(() => {
-        async function fetchData() {
-            const todoSnapshot = await getDocs(todoData); // await is a function  which means finsih this line then move ahead.
-            const todoList = todoSnapshot.docs.map((doc) => [doc.data(), doc.id]); //making and running a loop to get all specific info/data/document from firestore. //"map is a function" 
+        async function fetchData() { //async means, run 2 things together, mean if the system is read first function, meanwhile it understands and runs that, on-other-hand the system will also start reading the next lineafter that function
+            const todoSnapshot = await getDocs(todoData); // await is a function  which means finsih this line first, once task is complete then move ahead.
+            const todoList = todoSnapshot.docs.map((doc) => [doc.data(), doc.id]); //making and running a loop to get all specific info/data/document from firestore. //"map is a function and kind of loop7" 
             setTodos(todoList);
             console.log(todoList);
         }
         fetchData();
-    }, []);
+    }, []); // this empty parameters [] means the above function will run once only when an app is loaded
 
 
     //this is for "ADD FUNCTION"
     //adding document in firebase
     const onTodoSubmit = async(newTodo) => {
-        await addDoc(todoData, { todo: newTodo, }).then(() => { //.then is a function, when document is added then use ".then" without this the list will not be updated in our app, although is will be send onto firebase. so to update our list we will use this function.
+        await addDoc(todoData, { todo: newTodo, } //"todoData"=>defining collection where the updated data should add. "{todo: newTodo}" this is defining specificity about where and what exactly values should be saved, so, in collection we want to save the "newTodo value" in "todo variable" 
+        ).then(() => { //.then is a function, when document is added then use ".then" without this the list will not be updated in our app, although is will be send onto firebase. so to update our list we will use this function.
             setTodos([
                 ...todos, //to save all old and new values of an existing array. here,"..." define old values and, "," defines new value.
                 [{
@@ -76,7 +77,7 @@ function App() {
             <
             div style = {
                 {
-                    overflow: "hidden",
+                    overflow: "auto",
                     marginInline: "50px",
                     height: "70%",
                     borderRadius: "18px",
