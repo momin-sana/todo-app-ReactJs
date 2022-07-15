@@ -4,11 +4,9 @@ import db from "../Firebase/firebase";
 import { doc, deleteDoc, updateDoc } from "firebase/firestore/lite"; //doc, deleteDoc for delete function
 
 const TodoList = ({ text, id }) => {
-
     const [showEdit, setShowEdit] = useState(false); //importing "usestate" to run onclick function on "Edit Button"
     //delete function
     const [editTodo, setEditTodo] = useState(text);
-
 
     const delTodo = async() => {
         //async function parallel kaam krta hai
@@ -27,8 +25,7 @@ const TodoList = ({ text, id }) => {
             // alert('Your Edit has been Successfully Updated')
             window.location.reload();
         });
-    }
-
+    };
 
     return ( <
         >
@@ -39,9 +36,7 @@ const TodoList = ({ text, id }) => {
             { display: "flex", justifyContent: "space-between" } } >
         <
         p style = {
-            { marginTop: "7px" } } > { text } < /p>
-
-        <
+            { marginTop: "7px" } } > { text } < /p>{" "} <
         div className = "features" >
         <
         button onClick = { delTodo } //calling delete function
@@ -49,8 +44,8 @@ const TodoList = ({ text, id }) => {
         style = {
             { marginRight: "5.5px" } } >
         <
-        i className = "far fa-trash-alt" > < /i> <
-        /button> <
+        i className = "far fa-trash-alt" > < /i>{" "} <
+        /button>{" "} <
         button onClick = {
             () => {
                 // onclicking this button our input will be shown
@@ -62,10 +57,10 @@ const TodoList = ({ text, id }) => {
         style = {
             { marginLeft: "2.5px", backgroundColor: "darkkhaki" } } >
         <
-        i className = "far fa-edit" > < /i> <
-        /button> <
-        /div> <
-        /div> {
+        i className = "far fa-edit" > < /i>{" "} <
+        /button>{" "} <
+        /div>{" "} <
+        /div>{" "} {
             showEdit && ( //running a function to  make input box appear upon clicking the edit button
                 <
                 div className = "inputBtn" >
@@ -77,13 +72,14 @@ const TodoList = ({ text, id }) => {
                         setEditTodo(target.value);
                     }
                 }
-                placeholder = "Enter your Todo" / >
+                placeholder = "Enter your Todo" /
+                >
                 <
-                button onClick = { editTodoFunction } > Edit < /button> <
+                button onClick = { editTodoFunction } > Edit < /button>{" "} <
                 /div>
             )
-        } <
-        /div> <
+        } { " " } <
+        /div>{" "} <
         />
     );
 };
