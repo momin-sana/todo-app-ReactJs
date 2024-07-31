@@ -2,6 +2,9 @@
     "name": "todo-app",
     "version": "0.1.0",
     "private": true,
+
+    "homepage": "https://<momin-sana>.github.io/<todo-app-ReactJs>",
+
     "dependencies": {
         "@emotion/react": "^11.9.3",
         "@emotion/styled": "^11.9.3",
@@ -19,8 +22,13 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
         "test": "react-scripts test",
         "eject": "react-scripts eject"
+    },
+    "devDependencies": {
+        "gh-pages": "^6.1.1"
     },
     "eslintConfig": {
         "extends": [
