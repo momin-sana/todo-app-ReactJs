@@ -8,7 +8,7 @@ const TodoList = ({ text, id }) => {
     //delete function
     const [editTodo, setEditTodo] = useState(text);
 
-    const delTodo = async() => {
+    const delTodo = async () => {
         //async function parallel kaam krta hai
         await deleteDoc(doc(db, "todos", id)) // here "todos" is a collection where i want to delete anything that is stored in "id" at firebase/firestore
             .then(() => {
@@ -18,7 +18,7 @@ const TodoList = ({ text, id }) => {
     };
 
     //For Updating Editing or changes made in todo list
-    const editTodoFunction = async() => {
+    const editTodoFunction = async () => {
         await updateDoc(doc(db, "todos", id), {
             todo: editTodo,
         }).then(() => {
@@ -27,60 +27,43 @@ const TodoList = ({ text, id }) => {
         });
     };
 
-    return ( <
-        >
-        <
-        div className = "todoListStyle" >
-        <
-        div style = {
-            { display: "flex", justifyContent: "space-between" } } >
-        <
-        p style = {
-            { marginTop: "7px" } } > { text } < /p>{" "} <
-        div className = "features" >
-        <
-        button onClick = { delTodo } //calling delete function
-        className = "featureStyle"
-        style = {
-            { marginRight: "5.5px" } } >
-        <
-        i className = "far fa-trash-alt" > < /i>{" "} <
-        /button>{" "} <
-        button onClick = {
-            () => {
-                // onclicking this button our input will be shown
-                setShowEdit(!showEdit); // this command is according to previous situation. for suppose on clicking the "edit" button the "input box" is visible, clicking again on the button the box will disapear.
-                setEditTodo(text);
-            }
-        }
-        className = "featureStyle"
-        style = {
-            { marginLeft: "2.5px", backgroundColor: "darkkhaki" } } >
-        <
-        i className = "far fa-edit" > < /i>{" "} <
-        /button>{" "} <
-        /div>{" "} <
-        /div>{" "} {
-            showEdit && ( //running a function to  make input box appear upon clicking the edit button
-                <
-                div className = "inputBtn" >
-                <
-                input className = "inputBox"
-                value = { editTodo }
-                onChange = {
-                    ({ target }) => {
-                        setEditTodo(target.value);
-                    }
-                }
-                placeholder = "Enter your Todo" /
-                >
-                <
-                button onClick = { editTodoFunction } > Edit < /button>{" "} <
-                /div>
-            )
-        } { " " } <
-        /div>{" "} <
-        />
+    return (
+        <div className="todoListStyle" >
+            <div style={{ display: "flex", justifyContent: "space-between" }} >
+                <p style={{ marginTop: "7px" }} > {text} </p>
+                <div className="features" >
+                    <button onClick={delTodo} //calling delete function
+                        className="featureStyle"
+                        style={{ marginRight: "5.5px" }} >
+                        <i className="far fa-trash-alt" > </i>
+                    </button>
+                    <button onClick={() => 
+                        {
+                        // onclicking this button our input will be shown
+                        setShowEdit(!showEdit); // this command is according to previous situation. for suppose on clicking the "edit" button the "input box" is visible, clicking again on the button the box will disapear.
+                        setEditTodo(text);
+                        }}
+                        className="featureStyle"
+                        style={{ marginLeft: "2.5px", backgroundColor: "darkkhaki" }} >
+                        <i className="far fa-edit" > </i>
+                    </button>
+                </div>
+            </div>
+            {showEdit && ( //running a function to  make input box appear upon clicking the edit button
+                <div className="inputBtn" >
+                    <input className="inputBox"
+                        value={editTodo}
+                        onChange={
+                            ({ target }) => {
+                                setEditTodo(target.value);
+                            }
+                        }
+                        placeholder="Enter your Todo" 
+                    />
+                    <button onClick={editTodoFunction} > Edit </button>
+                </div>
+            )} 
+        </div>
     );
 };
 
