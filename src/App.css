@@ -1,44 +1,48 @@
-    .App {
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-        height: 100%;
-        width: 100%;
-    }
-    
-    .container {
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-        border-radius: 15px;
-        margin-top: 6%;
-        height: 100vh;
-        margin-inline: 10vw;
-        padding: 10px;
-        background-color: #2f3c4e;
-        color: aliceblue;
-    }
-    
-    .inputStyle {
-        height: 50px;
-        width: 78%;
-        border-color: #000000;
-        border-radius: 10px;
-        margin-right: 10px;
-        padding-inline: 10px;
-        background-color: aliceblue;
-        box-shadow: 2px 4px 8px 0px #aaaaaa;
-        color: #2f3c4e;
-    }
-    
-    h1 {
-        padding: 10px;
-    }
-    
-    .buttonStyle {
-        border-radius: 10px;
-        height: 5.5vh;
-        width: 7vw;
-        background-color: aliceblue;
-        color: #2f3c4e;
-        cursor: pointer;
-        box-shadow: 2px 4px 8px 0px #aaaaaa;
-    }
+.App {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+    border-radius: 15px;
+    margin-top: 6%;
+    height: 100vh;
+    margin-inline: 10vw;
+    padding: 10px;
+    background-color: #2f3c4e;
+    color: aliceblue;
+}
+
+.inputStyle {
+    height: 50px;
+    width: 78%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-right: 10px;
+    padding-inline: 10px;
+    background-color: aliceblue;
+    box-shadow: 2px 4px 8px 0px #aaaaaa;
+    color: #2f3c4e;
+}
+
+h1 {
+    padding: 10px;
+}
+
+.buttonStyle {
+    border-radius: 10px;
+    height: 5.5vh;
+    width: 7vw;
+    background-color: aliceblue;
+    color: #2f3c4e;
+    cursor: pointer;
+    box-shadow: 2px 4px 8px 0px #aaaaaa;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
