@@ -1,44 +1,61 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
 .App {
     text-align: center;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    margin: 50px auto 0;
+    flex-direction: column;
 }
 
 body {
-    background-color: rgb(0 73 73);
     font-family: "Poppins", sans-serif;
     margin: 0;
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
-.title h1 {
-    color: #fffefe;
-    text-align: center;
-    margin: 30px 0;
-    font-weight: 700;
+.title {
+    text-align: center;      
+    margin-top: 5px;         
+    margin-bottom: 10px;     
+    padding: 10px;            
+  }
+  
+  .title h1 {
+    border: 2px black;
+    color: #333;            
+    margin: 0;                
+  }
+
+
+.todo_container {
+    width: 50%;
+    margin: 0 auto;
 }
+
 
 form {
-    max-width: 500px;
+    display: flex;
     margin: 0 auto;
-    background: rgb(0 73 73);
-    padding: 20px 30px;
+    padding: 10px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.114);
+    margin-top: 10px;
+    flex-direction: row;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
 }
 
-form h3 {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 20px;
+.input_container {
+    margin: 0 10px 0 0;
+    display: flex;
+    width: 100%;
 }
 
 form input {
+    background-color: #5656565d;
     color: rgb(0 73 73);
     width: 100%;
     padding: 15px 10px;
@@ -49,13 +66,8 @@ form input {
     border: 1px solid #ddd;
 }
 
-.input_container {
-    margin-bottom: 20px;
-}
-
 .btn_container {
     text-align: center;
-    margin-bottom: 10px;
 }
 
 .btn_container button {
@@ -76,67 +88,74 @@ form input {
     background-color: #000000;
 }
 
-.todo_container {
-    width: 90%;
-    margin: 0 auto;
-    margin-top: 30px;
-}
-
 .todo {
-    margin-top: 20px;
-    background: rgb(0 73 73);
-    padding: 20px 30px;
-    border-radius: 10px;
+    margin-top: 10px;
+    font-family: 'Montserrat', sans-serif;
+    border-top-style: dashed;
+    padding: 10px 5px 0 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
 
-.todo:hover {
-    transform: scale(1.05);
-}
-
-.todo input {
-    width: 70%;
+.list {
+    width: 100%;
+    background-color: white;
     border: none;
-    outline: none;
-    background-color: transparent;
     font-size: 20px;
     font-weight: 500;
-    color: #fff;
+    color: rgb(0 73 73);
+    resize: none; /* Prevent manual resizing */
+    overflow: auto; /* Allow scrolling if necessary */
+    white-space: pre-wrap; /* Ensure text wraps correctly */
+    word-wrap: break-word; /* Break long words */
+    line-height: 1.5em; /* Adjust line height for readability */
+    min-height: 1.5em; /* Minimum height to fit one line */
+    box-sizing: border-box; /* Ensure padding is included in height calculations */
+}
+
+.list:disabled {
+    background-color: white;
+    border: none;
+    cursor: default;
+}
+
+.edit-delete-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s;
 }
 
 .button-complete,
 .button-delete,
 .button-edit {
-    border: none;
     outline: none;
-    cursor: pointer;
     background-color: transparent;
     border-radius: 50%;
-    transition: color 0.3s;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out; 
 }
 
 .button-complete:hover,
 .button-delete:hover,
 .button-edit:hover {
-    color: #ffffff;
+    transform: scale(1.5);
+    color: rgb(0 73 73);
 }
 
 #i {
-    font-size: 35px;
+    font-size: 25px;
 }
 
 .button-complete {
     color: #58f46c;
-    margin-right: 10px;
 }
 
 .button-edit {
     color: #38c5fd;
-    margin-right: 10px;
 }
 
 .button-delete {

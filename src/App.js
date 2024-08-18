@@ -23,6 +23,15 @@ function App() {
             querySnapshot.forEach((doc) => {
                 todosArray.push({...doc.data(), id: doc.id });
             });
+                 // Sort todosArray by the createdAt timestamp, with the newest first
+            todosArray.sort((a, b) => {
+                if (a.createdAt && b.createdAt) {
+                    return b.createdAt.seconds - a.createdAt.seconds;
+                } else {
+                    return 0; // Keep the original order if createdAt is missing
+                }
+            });
+
             setTodos(todosArray);
         });
         return () => unsub();
@@ -43,10 +52,8 @@ function App() {
             <div >
             <Title />
             </div> 
-            <div >
-            <AddTodo />
-            </div> 
             <div className = "todo_container" > 
+                <AddTodo />
                 {todos.map((todo)=>(
                     <Todo key = {todo.id}
                     todo={todo}

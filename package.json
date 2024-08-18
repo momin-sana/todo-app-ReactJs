@@ -1,10 +1,8 @@
 {
     "homepage": "https://momin-sana.github.io/todo-app-ReactJs",
-
     "name": "todo-app",
     "version": "0.1.0",
     "private": true,
-
     "dependencies": {
         "@emotion/react": "^11.9.3",
         "@emotion/styled": "^11.9.3",
