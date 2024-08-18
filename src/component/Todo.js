@@ -69,7 +69,7 @@ export default function Todo({ todo, toggleComplete, handleDelete, handleEdit, }
                     overflow: 'auto',
                     resize: 'none',
                     minHeight: '1.5em',
-                    maxHeight: '10em', // Optional: Set a max height to avoid excessive expansion
+                    maxHeight: inputHeight, // Optional: Set a max height to avoid excessive expansion
                     width: '100%',
                 }}
                 type="text"
